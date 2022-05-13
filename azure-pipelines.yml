@@ -10,9 +10,9 @@ pool:
   vmImage: 'ubuntu-latest' # examples of other options: 'macOS-10.15', 'windows-latest'
 
 steps:
-- task: Npm@1
-  inputs:
-     command: 'install'
+# - task: Npm@1
+#   inputs:
+#      command: 'install'
 
 - task: NodeTool@0
   inputs:

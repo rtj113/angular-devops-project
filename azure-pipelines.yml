@@ -10,13 +10,17 @@ pool:
   vmImage: 'ubuntu-latest' # examples of other options: 'macOS-10.15', 'windows-latest'
 
 steps:
+- task: Npm@1
+  inputs:
+     command: 'install'
+
 - task: NodeTool@0
   inputs:
     versionSpec: '^12.11.1'
   displayName: 'Install Node.js'
 
 - script: |
-    npm install -g @angular/cli
-    npm install
+    npm install -g @angular/cli@11.0.4
+    npm install --only=dev
     ng build --prod
   displayName: 'npm install and build'
